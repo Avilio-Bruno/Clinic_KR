@@ -1,0 +1,45 @@
+<html>
+
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="/static/stylesheets/styles.css">
+		<script type="text/javascript" src="/static/javascripts/jquery-3.6.0.min.js"></script>
+</head>
+		<body>
+			<div class="wrapper">
+				<header>
+					<div class = "heading">
+					<h1 style="color: red;font-family: impact;font-size: 60px;">W W W</h1>
+					</div>
+
+				</header>
+				{% if navmenu %}
+					<nav>
+						<ul class="top-menu">
+							{% for item in navmenu %}
+								<li><a href="{{item.addr}}">{{item.name}}</a></li>
+							{% endfor %}
+						</ul>
+					</nav>
+				{% endif %}
+				<main id="{{page_name}}">
+					{% block content %}{% endblock %}
+				</main>
+			</div>
+			<footer>
+				<div class="footer">
+					<div id="social">
+						<h3>SOCIAL NETWORKS</h3>
+						<a href="http://google.com/" class="social-icon google"></a>
+					</div>
+					<div id="footer-logo">
+						<a href="/"><img src="/static/images/footer-logo.png" alt="Whitesquare logo"></a>
+					</div>
+				</div>
+			</footer>
+			<script type="text/javascript" src="/static/javascripts/topmenu.js"></script>
+			<script type="text/javascript" src="/static/javascripts/jqfunc.js"></script>
+		</body>
+</html>

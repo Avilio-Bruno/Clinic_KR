@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <article>
+        <h2> Таблица, показывающая уникальных пользователей в интернете по каждой стране</h2>
+        <table align="center">
+            <tr>
+                <th>Страна</th>
+                <th>Прошлый год</th>
+                <th>Позапрошлый год</th>
+                <th>Разница</th>
+            </tr>
+            <tbody>
+            {% for row in processed_files %}
+                <tr>
+                    <td>{{row[2]}}</td>
+                    <td>{{ row[3]}}%</td>
+                    <td>{{ row[4]}}%</td>
+                    <td>{{ row[5]|round(2, 'common') }}%</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </article>
+{% endblock %}
